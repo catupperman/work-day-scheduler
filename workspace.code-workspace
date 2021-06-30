@@ -1,13 +1,16 @@
 {
 	"folders": [
 		{
-			"path": "."
-		},
-		{
+			"name": "Assets",
 			"path": "../../../../Development/bootcamp/05-Third-Party-APIs/02-Homework/Assets"
 		},
 		{
+			"name": "Develop",
 			"path": "../../../../Development/bootcamp/05-Third-Party-APIs/02-Homework/Develop"
+		},
+		{
+			"name": "work-day-scheduler",
+			"path": "."
 		}
 	],
 	"settings": {}
