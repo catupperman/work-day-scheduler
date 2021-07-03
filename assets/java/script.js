@@ -2,40 +2,50 @@
 //TODO: the current day is displayed at the top of the calendar, with running time.
 //Use moment to generate current date and time.
 var timeDisplayEl = $('#time-display');
-
+var timeBlkIndex = 0;
 
 function currentTime() {
     var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
     timeDisplayEl.text(rightNow);
 }
 
+setInterval(currentTime, 1000);
 // scroll down  (scroll bar needed?)
-//TODO: timeblocks for standard business hours 8-8? 12 hour time frame-- for loop would be better use, and less code,  *DRY*
-var timeBlkIndex = 0;
+//TODO: timeblocks for standard business hours 8-5 
+
+
+//IDEALLY: How I want this to work- take the currentTime value and compare it to a specific set of time (like an hour and all the misc min and seconds within that hour)
+
+//PONDERING: Can I take a time set using moment like range it from 08:00:00- 8:59:59?
+
 //can I loop this?
-var timeBlocks = [
-    {
-        timeFrame: 8,//moment to direct to 8am
-        scheduleText: "",
-        save: something,//localstorage?
-    },
-    {
+//var timeBlocks = [
+    //{
+        //timeFrame: "8:00:00-8:59:59",
+        //scheduleText: "",
+        //save: something,//localstorage?
+    //},
+    //{
 
-    }
-];
+    //}
+//];
 
-//JQuery to build type in blocks with a standard save button or would an array with appendages be more efficient??
+//PONDERING: JQuery to build text boxes with a standard save button or would an array with appendages be more efficient??
 
 
 
 // TODO: each timeblock is color coded to indicate whether it is in the past, present, or future
-//set three classes past present future
-//create a function with the variable of the current time, compare to the time set on the buttons to express different colors
-//past- gray
-//present- red
-//future- green
 
-//possible function
+//set three classes past(gray) present(red) future(green)
+//create a function with the variable of the current time, compare to the time set on the buttons to express different colors
+
+//var past = document.querySelector(".past");
+//var present = document.querySelector(".present");
+//var future = document.querySelector(".future");
+
+
+//possible function idea:
+
 // function colorCodes (){
     //if (curentTime >= timeBlock[timeBlkIndex]) 
     //display: gray in text box;
@@ -51,9 +61,8 @@ var timeBlocks = [
 
 //TO DO: click into a timeblock to enter an event, with click save to local storage
 //JSON elements for local storage, click events to save to the local storage 
-//onclick or maybe eventListener... on click is more inclusive to apply to each button as opposed to just one. 
+//PONDERING: onclick or maybe eventListener... on click is more inclusive to apply to each button as opposed to just one?
 
 
 
 //TODO: WHEN refreshing the page, the saved events persist
-setInterval(currentTime, 1000);
