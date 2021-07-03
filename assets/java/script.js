@@ -12,26 +12,33 @@ function currentTime() {
 setInterval(currentTime, 1000);
 // scroll down  (scroll bar needed?)
 //TODO: timeblocks for standard business hours 8-5 
+//for(i =0; i < 0; i++){
+
+
+//}
+
+//moment('8:00:00').startOf('hour');
+//moment('8:59:59').endOf('hour');
+
 
 
 //IDEALLY: How I want this to work- take the currentTime value and compare it to a specific set of time (like an hour and all the misc min and seconds within that hour)
 
 //PONDERING: Can I take a time set using moment like range it from 08:00:00- 8:59:59?
 
-//can I loop this?
-//var timeBlocks = [
-    //{
-        //timeFrame: "8:00:00-8:59:59",
-        //scheduleText: "",
-        //save: something,//localstorage?
-    //},
-    //{
-
-    //}
-//];
 
 //PONDERING: JQuery to build text boxes with a standard save button or would an array with appendages be more efficient??
+var scheduleTime = document.querySelector('$.form-group')
 
+function timeLoop() {
+    if (scheduleTime >= currentTime) {
+        document.querySelector(".present");
+    } if (scheduleTime < currentTime) {
+        document.querySelector(".future")
+    } else {
+        document.querySelector(".past")
+    }
+}
 
 
 // TODO: each timeblock is color coded to indicate whether it is in the past, present, or future
