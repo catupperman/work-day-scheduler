@@ -16,18 +16,25 @@ $(".saveBtn").on("click", function () {
     localStorage.setItem(hour, activity)
 })
 
-//TODO: timeblocks for standard business hours 8-5 
+//TODO: timeblocks for standard business hours 9-5 
+// TODO: each timeblock is color coded to indicate whether it is in the past, present, or future
+
+//create a function with the variable of the current time, compare to the time set on the buttons to express different colors
 var momenthour = moment().hours()
+//console.log(momenthour)
+
 $(".time-block").each(function () {
     var ourHour = $(this).attr("id").split("-")[1]
-    if (currentTime >= ourHour) {
-        $(this).attr(".time-block").past
-    } else if (currentTime <= ourHour) {
-        $(this).attr(".time-block").future
+    for(i=0; i < 0; i++) {
+        if (momenthour > ourHour){
+        $(".col-10").attr(".past")
+    } else if (momenthour === ourHour){
+        $(".col-10").attr(".present")
     } else {
-        $(this).attr(".time-block").present
+        $(".col-10").attr(".future")
     }
-
+    }
+    return;
 });
 //Use moment to generate current date and time.
 function currentTime() {
@@ -36,13 +43,6 @@ function currentTime() {
 }
 
 setInterval(currentTime, 1000);
-
-
-
-// TODO: each timeblock is color coded to indicate whether it is in the past, present, or future
-
-//set three classes past(gray) present(red) future(green)
-//create a function with the variable of the current time, compare to the time set on the buttons to express different colors
 
 
 //TODO: WHEN refreshing the page, the saved events persist
