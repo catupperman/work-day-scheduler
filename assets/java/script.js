@@ -34,9 +34,9 @@ $(".time-block").each(function () {
 
 //TODO: WHEN refreshing the page, the saved events persist
 
-var appdPage = $(this).siblings(".hour").text().trim()
+//var appdPage = $(this).siblings(".hour").text().trim()
 
-$(this).val(localStorage.getItem(appdPage))
+//$(this).val(localStorage.getItem(appdPage))
 
 
 
